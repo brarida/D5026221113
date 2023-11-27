@@ -1,19 +1,30 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Tutorial Membuat CRUD Pada Laravel - www.malasngoding.com</title>
-</head>
-<body>
+{{-- memakai template dari master2 --}}
+@extends('master2')
 
-	<h2>www.malasngoding.com</h2>
+@section('title', 'Database Pegawai')
+
+@section('judul_halaman')
+	<h2>Aufaa Hafizhah Brarida</h2>
 	<h3>Data Pegawai</h3>
 
-	<a href="/pegawai/tambah"> + Tambah Pegawai Baru</a>
+    <a class="btn btn-primary btn-sm" href="/pegawai/tambah"> + Tambah Pegawai Baru</a>
 
-	<br/>
-	<br/>
+	<br>
+    <br>
+@endsection
 
-	<table border="1">
+@section('konten')
+
+    <p>Cari Nama Pegawai :</p>
+    <form action="/pegawai/cari" method="GET">
+        <input class="" type="text" name="cari" placeholder="Cari Nama Pegawai ..." value="{{ old('cari') }}">
+        <input type="submit" value="CARI" class="btn btn-success btn-sm">
+    </form>
+
+    <br/>
+
+	<table class="table table-striped table-hover">
 		<tr>
 			<th>Nama</th>
 			<th>Jabatan</th>
@@ -28,14 +39,20 @@
 			<td>{{ $p->pegawai_umur }}</td>
 			<td>{{ $p->pegawai_alamat }}</td>
 			<td>
-				<a href="/pegawai/edit/{{ $p->pegawai_id }}">Edit</a>
-				|
-				<a href="/pegawai/hapus/{{ $p->pegawai_id }}">Hapus</a>
+                <a class="btn btn-success btn-sm" href="/pegawai/edit/{{ $p->pegawai_id }}">View</a>
+
+				<a class="btn btn-warning btn-sm" href="/pegawai/edit/{{ $p->pegawai_id }}">Edit</a>
+
+				<a class="btn btn-danger btn-sm" href="/pegawai/hapus/{{ $p->pegawai_id }}">Hapus</a>
 			</td>
 		</tr>
 		@endforeach
 	</table>
 
+    {{-- ini buat geser2 pagination --}}
+	{{ $pegawai->links() }}
+
+@endsection
 
 </body>
 </html>

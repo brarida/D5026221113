@@ -24,7 +24,7 @@ Route::get('/stylecss', function () {
 Route::get('perkalian','App\Http\Controllers\DosenController@index');
 Route::get('/showblog','App\Http\Controllers\DosenController@showBlog');
 
-Route::get('/pegawai/{nama}', 'App\Http\Controllers\DosenController@showNama');
+Route::get('/menambah/{nama}', 'App\Http\Controllers\DosenController@showNama');
 
 Route::get('/formulir', 'App\Http\Controllers\DosenController@formulir');
 Route::post('/formulir/proses', 'App\Http\Controllers\DosenController@proses');
@@ -36,9 +36,13 @@ Route::get('/blog/kontak', 'App\Http\Controllers\BlogController@kontak');
 Route::get('/blog/formulir', 'App\Http\Controllers\BlogController@formulir');
 
 //route CRUD
+// ini buat homenya
 Route::get('/pegawai','App\Http\Controllers\PegawaiController@index');
 Route::get('/pegawai/tambah','App\Http\Controllers\PegawaiController@tambah');
 Route::post('/pegawai/store','App\Http\Controllers\PegawaiController@store');
 Route::get('/pegawai/edit/{id}','App\Http\Controllers\PegawaiController@edit');
 Route::post('/pegawai/update','App\Http\Controllers\PegawaiController@update');
+// untuk hapus
 Route::get('/pegawai/hapus/{id}','App\Http\Controllers\PegawaiController@hapus');
+// untuk cari
+Route::get('/pegawai/cari','App\Http\Controllers\PegawaiController@cari');
