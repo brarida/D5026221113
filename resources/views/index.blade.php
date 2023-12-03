@@ -5,7 +5,6 @@
 @section('title', 'Database Pegawai')
 
 @section('judul_halaman')
-	<h2>Aufaa Hafizhah Brarida</h2>
 	<h3>Data Pegawai</h3>
 
     <a class="btn btn-primary btn-sm" href="/pegawai/tambah"> + Tambah Pegawai Baru</a>
@@ -39,7 +38,7 @@
 			<td>{{ $p->pegawai_umur }}</td>
 			<td>{{ $p->pegawai_alamat }}</td>
 			<td>
-                <a class="btn btn-success btn-sm" href="/pegawai/edit/{{ $p->pegawai_id }}">View</a>
+                <a class="btn btn-success btn-sm" href="/pegawai/lihat/{{ $p->pegawai_id }}">View</a>
 
 				<a class="btn btn-warning btn-sm" href="/pegawai/edit/{{ $p->pegawai_id }}">Edit</a>
 

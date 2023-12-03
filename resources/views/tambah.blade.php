@@ -2,10 +2,9 @@
 @extends('master2')
 
 @section('judul_halaman')
-	<h2><a href="https://www.malasngoding.com">www.malasngoding.com</a></h2>
-	<h3>Data Pegawai</h3>
+	<h3>Tambah Data Pegawai</h3>
 
-	<a href="/pegawai"> Kembali</a>
+	<a href="/pegawai" class="btn btn-danger"> Kembali</a>
 
 	<br/>
 	<br/>
@@ -39,11 +38,11 @@
         <div class = "form-group">
             <label for = "umur" class = "col-sm-2 control-label">Alamat</label>
             <div class = "col-sm-10">
-                <textarea name="alamat" required="required"></textarea>
+                <textarea name="alamat" required="required" class="form-control"></textarea>
             </div>
         </div>
 
-		<input type="submit" value="Simpan Data">
+		<input type="submit" value="Simpan Data" class="btn btn-success">
 	</form>
 @endsection
 

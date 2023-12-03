@@ -23,22 +23,22 @@ class PegawaiController extends Controller
     // method untuk menampilkan view form tambah pegawai
     public function tambah()
     {
-
-	// memanggil view tambah
-	return view('tambah');
+        // memanggil view tambah
+        return view('tambah');
     }
 
     public function store(Request $request)
     {
-	// insert data ke table pegawai
-	DB::table('pegawai')->insert([
+	    // insert data ke table pegawai
+	    DB::table('pegawai')->insert([
 		'pegawai_nama' => $request->nama,
 		'pegawai_jabatan' => $request->jabatan,
 		'pegawai_umur' => $request->umur,
 		'pegawai_alamat' => $request->alamat
-	]);
-	// alihkan halaman ke halaman pegawai
-	return redirect('/pegawai');
+	    ]);
+
+        // alihkan halaman ke halaman pegawai
+        return redirect('/pegawai');
     }
 
     // method untuk edit data pegawai
@@ -46,6 +46,7 @@ class PegawaiController extends Controller
     {
         // mengambil data pegawai berdasarkan id yang dipilih
         $pegawai = DB::table('pegawai')->where('pegawai_id',$id)->get();
+
         // passing data pegawai yang didapat ke view edit.blade.php
         return view('edit',['pegawai' => $pegawai]);
 
@@ -61,6 +62,7 @@ class PegawaiController extends Controller
             'pegawai_umur' => $request->umur,
             'pegawai_alamat' => $request->alamat
         ]);
+
         // alihkan halaman ke halaman pegawai
         return redirect('/pegawai');
     }
@@ -80,13 +82,24 @@ class PegawaiController extends Controller
 		// menangkap data pencarian
 		$cari = $request->cari;
 
-    		// mengambil data dari table pegawai sesuai pencarian data
+    	// mengambil data dari table pegawai sesuai pencarian data
 		$pegawai = DB::table('pegawai')
 		->where('pegawai_nama','like',"%".$cari."%")
 		->paginate();
 
-    		// mengirim data pegawai ke view index
+    	// mengirim data pegawai ke view index
 		return view('index',['pegawai' => $pegawai]);
 
 	}
+
+    public function lihat($id)
+    {
+        // mengambil data pegawai berdasarkan id yang dipilih
+        $pegawai = DB::table('pegawai')->where('pegawai_id', $id)->get();
+
+        // passing data pegawai yang didapat ke view lihat.blade.php
+        return view('lihat', ['pegawai' => $pegawai]);
+
+    }
+
 }
