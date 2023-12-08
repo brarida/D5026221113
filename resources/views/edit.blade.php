@@ -18,32 +18,24 @@
 
         <input type="hidden" name="id" value="{{ $p->pegawai_id }}">
 
-        <div class = "form-group">
-            <label for = "nama" class = "col-sm-2 control-label">Nama</label>
-            <div class = "col-sm-10">
-                <input type="text" name="nama" required="required" class = "form-control" value="{{ $p->pegawai_nama }}">
-            </div>
+        <div class = "input-group mb-3">
+            <label for = "nama" class = "input-group-text">Nama</label>
+            <input type="text" name="nama" required="required" class = "form-control" value="{{ $p->pegawai_nama }}">
         </div>
 
-        <div class = "form-group">
-            <label for = "jabatan" class = "col-sm-2 control-label">Jabatan</label>
-            <div class = "col-sm-10">
-                <input type="text" name="jabatan" required="required" class = "form-control" value="{{ $p->pegawai_jabatan }}">
-            </div>
+        <div class = "input-group mb-3">
+            <label for = "jabatan" class = "input-group-text">Jabatan</label>
+            <input type="text" name="jabatan" required="required" class = "form-control" value="{{ $p->pegawai_jabatan }}">
         </div>
 
-        <div class = "form-group">
-            <label for = "umur" class = "col-sm-2 control-label">Umur</label>
-            <div class = "col-sm-10">
-                <input type="number" name="umur" required="required" class = "form-control" value="{{ $p->pegawai_umur }}">
-            </div>
+        <div class = "input-group mb-3">
+            <label for = "umur" class = "input-group-text">Umur</label>
+            <input type="number" name="umur" required="required" class = "form-control" value="{{ $p->pegawai_umur }}">
         </div>
 
-        <div class = "form-group">
-            <label for = "umur" class = "col-sm-2 control-label">Alamat</label>
-            <div class = "col-sm-10">
-                <textarea name="alamat" required="required" class="form-control">{{ $p->pegawai_alamat }}</textarea>
-            </div>
+        <div class = "input-group mb-3">
+            <label for = "umur" class = "input-group-text">Alamat</label>
+            <textarea name="alamat" required="required" class="form-control">{{ $p->pegawai_alamat }}</textarea>
         </div>
 
 		<input type="submit" value="Simpan Data" class="btn btn-success">

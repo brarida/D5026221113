@@ -13,7 +13,7 @@ class PegawaiController extends Controller
     	// mengambil data dari table pegawai
     	// $pegawai = DB::table('pegawai')->get();
 
-        // mengambil data dari table pegawai
+        // mengambil data dari table pegawai untuk paginate
 		$pegawai = DB::table('pegawai')->paginate();
 
     	// mengirim data pegawai ke view index
