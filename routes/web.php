@@ -48,7 +48,7 @@ Route::get('/pegawai/hapus/{id}','App\Http\Controllers\PegawaiController@hapus')
 // untuk cari
 Route::get('/pegawai/cari','App\Http\Controllers\PegawaiController@cari');
 
-//route CRUD Pegawai
+//route CRUD tas (tugas Pra EAS)
 // ini buat homenya
 Route::get('/tas','App\Http\Controllers\TasController@index');
 Route::get('/tas/tambah','App\Http\Controllers\TasController@tambah');
@@ -60,3 +60,14 @@ Route::post('/tas/update','App\Http\Controllers\TasController@update');
 Route::get('/tas/hapus/{id}','App\Http\Controllers\TasController@hapus');
 // untuk cari
 Route::get('/tas/cari','App\Http\Controllers\TasController@cari');
+
+//route CRUD soal EAS tahun lalu
+Route::get('/nilaikuliah', 'App\Http\Controllers\NilaiController@index2');
+Route::get('/nilaikuliah/tambah2','App\Http\Controllers\NilaiController@tambah2');
+Route::post('/nilaikuliah/store2','App\Http\Controllers\NilaiController@store2');
+
+//route CRUD EAS
+Route::get('/karyawan', 'App\Http\Controllers\EASController@index');
+Route::get('/karyawan/tambah','App\Http\Controllers\EASController@tambah');
+Route::post('/karyawan/store','App\Http\Controllers\EASController@store');
+Route::get('/karyawan/hapus/{id}','App\Http\Controllers\EASController@hapus');
